@@ -1,0 +1,4 @@
+# nothing from Neovim's runtime data
+*.bak*
+*.log
+lazy-lock.json
