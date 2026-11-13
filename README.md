@@ -40,6 +40,7 @@ It installs to `~/.config/solarvim`, so it sits alongside your normal Neovim con
 | `Space mp` | markdown preview |
 | `Space pv` | open PDF in Zathura |
 | `Space h` | Neovim tutorial |
+| `Space ?` | list of solarvim keys |
 | `gd` / `K` | go to definition / hover |
 | `grn` / `grr` | rename / references |
 | `Ctrl+h/j/k/l` | move between windows |

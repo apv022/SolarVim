@@ -272,8 +272,8 @@ vim.api.nvim_create_user_command("Preview", function()
   vim.cmd("normal! \\<Space>mp")
 end, { desc = "Markdown preview in browser" })
 
--- Bare keys: type `?` to see the list of solarvim keys in a float.
-map("n", "?", function()
+-- Space ? shows the list of solarvim keys in a float (bare ? stays backward search).
+local function solar_keys()
   local keys = {
     " SOLARVIM KEYS (Space = leader)",
     "",
@@ -282,7 +282,7 @@ map("n", "?", function()
     " Space b      buffers         Space h   tutorial",
     " Space d      diagnostic      Space cf  format",
     " Space tb     light/dark      Space mp  markdown preview",
-    " Space pv     PDF in Zathura  Space z   zoom window",
+    " Space pv     PDF in Zathura  Space ca  quick fix",
     "",
     " gd  definition     K  hover     grr  references",
     " gra code action    grn rename  Ctrl+hjkl  move window",
@@ -301,7 +301,8 @@ map("n", "?", function()
   })
   vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = buf })
   vim.keymap.set("n", "<Esc>", "<cmd>close<cr>", { buffer = buf })
-end, { desc = "Show solarvim keys" })
+end
+map("n", "<leader>?", solar_keys, { desc = "Show solarvim keys" })
 
 -- solar_md_fix: working browser Markdown preview, and keys cleanup -------
 local function solar_md_preview()
@@ -327,12 +328,6 @@ end
 map("n", "<leader>mp", solar_md_preview, { desc = "Markdown preview (browser)" })
 vim.api.nvim_create_user_command("Preview", solar_md_preview, { desc = "Markdown preview in browser" })
 
--- undo the earlier bare '?' mapping so backward search works again
-pcall(vim.keymap.del, "n", "?")
-map("n", "<leader>?", function()
-  vim.cmd("normal! \\<Esc>")
-  vim.cmd("help solarvim-keys")
-end, { desc = "Show solarvim keys" })
 
 -- solar_pairs: auto-close brackets and quotes (built-in, no plugin) ------
 local solar_pairs = { ["("] = ")", ["["] = "]", ["{"] = "}", ['"'] = '"', ["'"] = "'", ["`"] = "`" }
