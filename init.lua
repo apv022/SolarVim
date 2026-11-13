@@ -226,8 +226,8 @@ map("n", "<leader>mp", function()
     return
   end
   local page = "<!doctype html><meta charset='utf-8'><title>preview</title>"
-    .. "<style>body{max-width:44em;margin:2em auto;font:16px/1.6 sans-serif;color:#ffe9b0;background:#0b0b0b}"
-    .. "code,pre{background:#161616;color:#ff9a3c}a{color:#ffd60a}</style>"
+    .. "<style>body{max-width:44em;margin:2em auto;font:16px/1.6 sans-serif;color:#f5e3d7;background:#0b0b0b}"
+    .. "code,pre{background:#171112;color:#ff8c6b}a{color:#ff3355}</style>"
   vim.fn.writefile(vim.split(page .. html, "\n"), out)
   vim.ui.open(out)
 end, { desc = "Markdown preview (browser)" })
@@ -319,8 +319,8 @@ local function solar_md_preview()
     return
   end
   local page = "<!doctype html><meta charset='utf-8'><title>preview</title>"
-    .. "<style>body{max-width:44em;margin:2em auto;font:16px/1.6 sans-serif;color:#ffe9b0;background:#0b0b0b}"
-    .. "code,pre{background:#161616;color:#ff9a3c}a{color:#ffd60a}</style>"
+    .. "<style>body{max-width:44em;margin:2em auto;font:16px/1.6 sans-serif;color:#f5e3d7;background:#0b0b0b}"
+    .. "code,pre{background:#171112;color:#ff8c6b}a{color:#ff3355}</style>"
   vim.fn.writefile(vim.split(page .. html, "\n"), out)
   vim.ui.open(out)
 end

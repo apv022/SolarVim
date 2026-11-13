@@ -1,17 +1,17 @@
--- solarvim: sunny cream (light) / sunset brown (dark)
+-- solarvim: crimson sunset (dark) / rose dawn (light)
 vim.cmd("hi clear")
 if vim.fn.exists("syntax_on") == 1 then vim.cmd("syntax reset") end
 vim.g.colors_name = "solarvim"
 
 local dark = vim.o.background == "dark"
 local c = dark and {
-  bg = "#0b0b0b", bg2 = "#161616", bg3 = "#2a2a2a", fg = "#ffe9b0", dim = "#8a7a5a",
-  sun = "#ffd60a", amber = "#ffb000", orange = "#ff7a00", red = "#ff3b2f",
-  green = "#d9e04a", teal = "#ffa347", blue = "#ff9a3c", purple = "#ff5e62",
+  bg = "#0b0b0b", bg2 = "#171112", bg3 = "#2e2023", fg = "#f5e3d7", dim = "#8f7470",
+  sun = "#ff3355", amber = "#ff8c6b", orange = "#ff5a36", red = "#e0233f",
+  green = "#f2b880", teal = "#ffa08a", blue = "#ff7088", purple = "#c94f7c",
 } or {
-  bg = "#fff7e0", bg2 = "#fdecc0", bg3 = "#f6dfa0", fg = "#4b3a26", dim = "#a8946f",
-  sun = "#f2a900", amber = "#b87a00", orange = "#d9631a", red = "#cc4b37",
-  green = "#7c8a1e", teal = "#2f8a7c", blue = "#3d7ea6", purple = "#9a5b9e",
+  bg = "#fff4ee", bg2 = "#fde4dc", bg3 = "#f5cfc4", fg = "#43242a", dim = "#a07f7a",
+  sun = "#c8102e", amber = "#b8401f", orange = "#d0451b", red = "#a3122a",
+  green = "#8a6a1e", teal = "#2f7a72", blue = "#3d6ea6", purple = "#8e3b6e",
 }
 
 local function hl(g, s) vim.api.nvim_set_hl(0, g, s) end
