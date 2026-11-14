@@ -1,6 +1,6 @@
 # ☀ solarvim
 
-A minimal, warm Neovim config. Zero plugins, built-in LSP, crimson sunset colors.
+A minimal, warm Neovim config. Zero plugins, built-in LSP, sunny colors with deep crimson reds.
 
 Needs Neovim 0.11+.
 
@@ -15,7 +15,7 @@ It installs to `~/.config/solarvim`, so it sits alongside your normal Neovim con
 
 ## What's in it
 
-- **Crimson sunset theme**: dark by default, with a light "rose dawn" variant (`Space tb` toggles).
+- **Sunny theme**: warm yellow, amber and orange with deep crimson reds. Dark "sunset" by default, light "sunny" variant (`Space tb` toggles).
 - **LSP with no plugins**: Lua, Python (pyright or pylsp), C/C++, R, JS/TS, HTML, CSS, and Bash. Each server only turns on if it's installed.
 - **Completion, hover docs, and signature help** as you type.
 - **Auto-closing brackets and quotes.**
