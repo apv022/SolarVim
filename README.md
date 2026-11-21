@@ -1,46 +1,34 @@
 # ☀ solarvim
 
-A minimal, warm Neovim config. Zero plugins, built-in LSP, sunny colors with deep crimson reds.
-
-Needs Neovim 0.11+.
-
-## Install
+A warm, feature-rich Neovim config in **one file** with **zero plugins**. Everything is built-in Neovim 0.11+.
 
 ```sh
-./install.sh
+git clone https://github.com/apv022/SolarVim ~/.local/share/solarvim
+~/.local/share/solarvim/install.sh
 NVIM_APPNAME=solarvim nvim
 ```
 
-It installs to `~/.config/solarvim`, so it sits alongside your normal Neovim config rather than replacing it.
+On a Rayconfig desktop this is already installed, `nvim` already means solarvim, and the colors come from the desktop palette.
 
-## What's in it
+## What you get (no plugins)
 
-- **Sunny theme**: warm yellow, amber and orange with deep crimson reds. Dark "sunset" by default, light "sunny" variant (`Space tb` toggles).
-- **LSP with no plugins**: Lua, Python (pyright or pylsp), C/C++, R, JS/TS, HTML, CSS, and Bash. Each server only turns on if it's installed.
-- **Completion, hover docs, and signature help** as you type.
-- **Auto-closing brackets and quotes.**
-- **Folder tree** using the built-in netrw.
-- **Markdown preview** in the browser (needs Python's `markdown` package).
-- **PDFs** open as text, or in Zathura with `:View`.
+| feature | how it is built |
+|---|---|
+| fuzzy file finder | `:find` + `findfunc` + `matchfuzzy` (uses `rg`/`git` if present) |
+| project search | `:grep` with ripgrep → quickfix list |
+| buffers / recent files | `vim.ui.select` |
+| statusline with mode, git branch, diagnostics, LSP | `%!v:lua` |
+| floating terminal | `nvim_open_win` + `:terminal` |
+| LSP for Lua, C/C++, Rust, Go, Python, JS/TS, HTML, CSS, Bash, R | `vim.lsp.config`; each turns on only if installed |
+| completion, signature help, symbol highlight | `vim.lsp.completion` |
+| treesitter highlight + folds | `vim.treesitter.start` |
+| auto-pairs, trim whitespace on save, restore cursor | autocmds |
+| undo history picker | `undotree()` |
+| commenting | built-in `gc` |
+| markdown preview, PDF as text | python-markdown / pdftotext |
 
 ## Keys
 
-`Space` is the leader key.
+`Space ?` (or `:Keys`) opens the cheat sheet. It is generated from the same table that creates the mappings, so it can't go stale. From a shell: `ray keys vim`.
 
-| Key | Action |
-| --- | --- |
-| `Space w` / `Space q` | save / quit |
-| `Space e` | folder tree |
-| `Space f` | find file |
-| `Space b` | switch buffer |
-| `Space d` | show diagnostic |
-| `Space ca` | code action / quick fix |
-| `Space cf` | format |
-| `Space tb` | toggle light/dark |
-| `Space mp` | markdown preview |
-| `Space pv` | open PDF in Zathura |
-| `Space h` | Neovim tutorial |
-| `Space ?` | list of solarvim keys |
-| `gd` / `K` | go to definition / hover |
-| `grn` / `grr` | rename / references |
-| `Ctrl+h/j/k/l` | move between windows |
+Per-machine tweaks go in `~/.config/solarvim/local.lua` (gitignored).

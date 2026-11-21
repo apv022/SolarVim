@@ -1,4 +1,6 @@
 # nothing from Neovim's runtime data
 *.bak*
 *.log
+colors/ray.lua
 lazy-lock.json
+local.lua
